@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import getConfig from '../../utils/getConfig'
 
-const ProductDescription = ({productInfo}) => {
+const ProductDescription = ({productInfo, id}) => {
     const [counter, setCounter] = useState(1)
 
     const handlePlus = () => setCounter(counter + 1)
@@ -39,18 +40,20 @@ const ProductDescription = ({productInfo}) => {
             Quantity
           </h4>
           <div className='Product-info__quantity--values'>
-            <button onClick={handleMinus} className='Product-info__quantity__btn-minus'onClick={handleMinus}>
+            <button onClick={handleMinus} className='Product-info__quantity__btn-minus'>
                 -
             </button>
             <div>{counter}</div>
-            <button onClick={handlePlus} className='Product-info__quantity__btn-plus' onClick={handlePlus}>
+            <button onClick={handlePlus} className='Product-info__quantity__btn-plus' >
                 +
             </button>
           </div>
         </article>
       </div>
       {/* <div className='Product-info__footer'> */}
-        <button onClick={handleAddCart} className='Product-info-btn' >Add to cart <i className='bx bx-cart-add Product-info-icon'></i></button>
+      <Link onClick={handleAddCart} to={localStorage.getItem('token')? `/product/${id}` : '/login'} className='Product-info-btn' >
+         <button  className='Product-info__btn-content' >Add to cart <i className='bx bx-cart-add Product-info-icon'></i></button>
+      </Link>
         
       {/* </div> */}
     </section>

@@ -58,13 +58,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--primary);
+  text-decoration: none;
+}
+.Product-info__btn-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: .5em;
   border:none;
   background-color: var(--primary);
   color: white;
   padding: .5em;
+  font-size: 16px;
 }
 .Product-info-icon{
  /* padding: 1px;
  margin-left: 5px; */
+ font-size: 20px;
 }

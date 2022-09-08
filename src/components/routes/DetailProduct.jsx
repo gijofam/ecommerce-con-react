@@ -77,7 +77,8 @@ const DetailProduct = () => {
             </div>
           </div>
         </div>
-        <ProductDescription productInfo={productInfo}/>
+        {/* <ProductDescription productInfo={productInfo} /> */}
+        <ProductDescription productInfo={productInfo} id={id}/>
       </div>
       <div className='dc__body__product-similar'>
         <h5 className='product-similar__description'>Discover similar items</h5>
