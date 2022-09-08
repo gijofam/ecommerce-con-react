@@ -1,0 +1,52 @@
+.card-purchase{
+ /* min-width: 250px; */
+ border: 1px solid gray;
+ border-radius: 10px;
+ /* padding: .5em; */
+ display: flex;
+ flex-direction: column;
+ gap: 1.5em;
+}
+.card-purchase__date{
+ /* width: 100%;    */
+ border-bottom: 1px solid gray;
+ padding: .5em;
+ font-size: 20px;
+}
+.card-purchase__body{
+ display: flex;
+ flex-direction: column;
+ gap: 1em;
+ padding: 3em;
+}
+
+
+/* aqui comienza los estilos del componente ProductPurchase */
+.card-purchase__item{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 1em;
+ margin: 0 1em;
+}
+.card-purchase__name{
+ font-size: 15px;
+ /* width: ; */
+ /* color: var(--dark-gray); */
+ font-weight: 400;
+ flex: 1;
+}
+.card-purchase__quantity{
+ border: 1px solid var(--light-gray);
+ padding: 0.3em 1em;
+ font-weight: 600;
+ /* flex:.2; */
+}
+.card-purchase__price{
+ font-weight: 600;
+ /* flex:1; */
+}
+.card-purchase__price::before{
+ content: '$';
+ margin: 0 3px;
+}

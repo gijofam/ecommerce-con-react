@@ -1,0 +1,94 @@
+.cart{
+ display: flex;
+ flex-direction: column;
+ margin: 1em 1em;
+ align-items: center;
+ gap: 1em;
+}
+.cart__title{
+    /* color: ; */
+}
+.cart__hr{
+ width: 50%;
+ margin: 0;
+}
+.cart__footer{
+ width: 50%;
+ display: flex;
+ flex-direction: column;
+}
+.cart__footer-body{
+ display: flex;
+ justify-content: space-between;
+}
+.cart__total-global-label{
+ font-weight: 500;
+}
+.cart__total-global-value{
+ font-weight: 500;
+ 
+}
+.cart__btn{
+ border: none;
+ color: white ;
+ background-color: var(--primary);
+ padding: .3em 0;
+ border-radius: 5px;
+}
+
+/* aqui cominza los estilos del componente ProductCatInfo */
+.cart__item{
+  width: 300px;
+  border: 1px solid var(--light-gray);
+  border-radius: 10px;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;  
+  box-shadow: 5px 5px 10px var(--light-gray);
+}
+.cart__item-header{
+ /* font-size: 1em; */
+  position: relative;
+}
+.cart__brand{
+  font-size: 13px;
+  color: var(--text-gray);
+}
+.cart__name{
+  font-size: 15px;
+  color: var(--dark-gray);
+}
+.cart__trash{
+ position: absolute;
+ right: 0;
+ color: var(--primary);
+ cursor: pointer;
+}
+.cart__trash:hover{
+}
+.cart_body{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart__quantity{
+  border: 1px solid var(--light-gray);
+  padding: 1px 1.5em;
+  font-size: 13px;
+  font-weight: 500;
+}
+.cart__item-footer{
+ display: flex;
+ align-self: flex-start;
+ /* align-items: center; */
+ gap: .5em;
+}
+.cart__total-label{
+ font-weight:500;
+}
+.cart__total-number{
+ /* font-size: px; */
+ font-weight:500;
+ /* align-self: center; */
+}

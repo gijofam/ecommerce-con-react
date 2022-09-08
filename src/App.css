@@ -1,0 +1,39 @@
+
+:root{
+ --primary: #f85555;
+ --light-gray: #dcd9d9;
+ --gray: #c7c7c7;
+ --dark-gray: #4f4f4f;
+ --text-gray: #ababab;
+}
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+h1,h2,h3,h4,ul,li{
+    margin: 0;
+    /* padding: 0 */
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+    /* list-style: none; */
+}
+
+body{
+    /* max-width: 1024px; */
+}
+img{
+    width: 100%;
+}
+.App{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}

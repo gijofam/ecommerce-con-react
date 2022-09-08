@@ -1,0 +1,52 @@
+.contenedor{
+    width: 100vw;
+    display: flex;
+    gap: 2em;
+    /* justify-content: center; */
+    margin: 2em 1em;
+    flex-wrap: wrap;
+}
+.contenedor__filter{
+ width: 20vw;
+}
+.contenedor__filter-price{
+
+}
+.contenedor__filter-category{
+
+}
+.select-category{
+
+}
+.select-category__option{
+
+}
+.contenedor__body{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    width: 70vw;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+/* aqui comienza los estilos del componente CardSearch */
+
+.form__search{
+ width: 100%;
+}
+.form__input{
+    width: 80%;
+ outline: none;
+ border: 1px solid var(--gray);
+}
+.form__btn{
+ width: 10% ;
+ border: none;
+ background-color: var(--primary);
+ color: white;
+ padding: 0.2em;
+}
