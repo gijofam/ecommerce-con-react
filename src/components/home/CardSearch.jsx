@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 
-const CardSearch = ({setProductSearch}) => {
+const CardSearch = ({setProductSearch,setOptionCategory}) => {
 
   const submit = (e) => {
     e.preventDefault()
     setProductSearch(e.target.productSearch.value.trim().toLowerCase())
-    // e.target.searchName.value = ''
+    e.target.productSearch.value = ''
+    setOptionCategory('All')
   }
 
   return (

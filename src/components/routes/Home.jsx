@@ -11,8 +11,9 @@ const Home = () => {
   const [optionCategory, setOptionCategory] = useState()
   // console.log(optionCategory);
   // estado para capturar el lo que se ingresa en el input a buscar
-  const [productSearch, setProductSearch] = useState()
   const products = useSelector(state => state.products)
+  // const productsCopy = useSelector(state => state.products)
+  const [productSearch, setProductSearch] = useState()
   
   // este estado sirve para realizat un capia de todos los productos que trae la peticion asyn
   const [backupProducts, setBackupProducts] = useState()
@@ -22,7 +23,9 @@ const Home = () => {
   const dispatch = useDispatch()
   
   useEffect(() => {
+    // setBackupProducts(products && products)
      dispatch(getAllProduct())
+    //  setBackupProducts(products)
     // console.log(products[0].title.toLowerCase().includes('san'))
     // setBackupProducts(dispatch(getAllProduct()))
 
@@ -30,20 +33,21 @@ const Home = () => {
       // dispatch(setProducts(products.filter(product => (
       //   product.title.toLowerCase().includes(productSearch) === true
       //   ) )))
-      setBackupProducts(products.filter(product => (
+      setBackupProducts(products?.filter(product => (
           product.title.toLowerCase().includes(productSearch) === true
            ) ))
       }else if(optionCategory && optionCategory !== 'All'){
         // dispatch(setProducts(products.filter(product => (
         //      product.category.name === optionCategory
         //   ) )))
-        setBackupProducts(products.filter(product => (
+        setBackupProducts(products?.filter(product => (
                product.category.name === optionCategory
             ) ))
-      }else{
+      }
+      else{
         setBackupProducts(products)
-      // dispatch(getAllProduct())
-    }
+        // dispatch(getAllProduct())
+       }
 
   }, [productSearch, optionCategory])
   
@@ -55,19 +59,31 @@ const Home = () => {
 
         </div>
         <div className='contenedor__filter-category'>
-            <CardSelectCategory setOptionCategory={setOptionCategory} optionCategory={optionCategory} />
+            <CardSelectCategory 
+            setOptionCategory={setOptionCategory} optionCategory={optionCategory}
+            dispatch = {dispatch} 
+            setProductSearch={setProductSearch}
+            />
         </div>
       </div>
         <div className='contenedor__body'>
-          <CardSearch setProductSearch={setProductSearch}/>
+          <CardSearch setProductSearch={setProductSearch}
+            setOptionCategory={setOptionCategory}
+          />
       
           <div className='card-container'>
             {
-              backupProducts?.map(product => (
-                <CardHome product={product} key={product.id}/>  
-              ))
+              optionCategory   
+              ?backupProducts?.map(product => (
+               <CardHome product={product} key={product.id}/>  
+               ))
+               :products?.map(product => (
+                  <CardHome product={product} key={product.id}/>  
+                ))             
+              // products?.map(product => (
+              //   <CardHome product={product} key={product.id}/>  
+              // ))
                 
-              // dispatch(getAllProduct())
 
             }
           </div>

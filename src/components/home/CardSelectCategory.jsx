@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { getAllProduct } from '../../store/slices/products.slice'
 import getConfig from '../../utils/getConfig'
 
-const CardSelectCategory = ({optionCategory, setOptionCategory}) => {
+const CardSelectCategory = ({optionCategory, setOptionCategory, setProductSearch}) => {
   const [categories, setCategories] = useState()
   
   useEffect(() => {
@@ -15,6 +16,7 @@ const CardSelectCategory = ({optionCategory, setOptionCategory}) => {
   // console.log(categories);
   const handleChange = (e) => {
     setOptionCategory(e.target.value)
+    setProductSearch()
     // console.log(e.target.value)
   }
   return (
